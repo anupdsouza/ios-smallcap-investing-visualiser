@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E48880CF2A7A554C00903C98 /* SCIVisualiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCIVisualiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48880CF2A7A554C00903C98 /* Small Cap Inv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Small Cap Inv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48880D22A7A554C00903C98 /* SCIVisualiserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCIVisualiserApp.swift; sourceTree = "<group>"; };
 		E48880D42A7A554C00903C98 /* SCIContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCIContentView.swift; sourceTree = "<group>"; };
 		E48880D62A7A554E00903C98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		E48880D02A7A554C00903C98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E48880CF2A7A554C00903C98 /* SCIVisualiser.app */,
+				E48880CF2A7A554C00903C98 /* Small Cap Inv.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = SCIVisualiser;
 			productName = SCIVisualiser;
-			productReference = E48880CF2A7A554C00903C98 /* SCIVisualiser.app */;
+			productReference = E48880CF2A7A554C00903C98 /* Small Cap Inv.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -293,7 +293,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anupdsouza.SCIVisualiser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Small Cap Inv";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,7 +322,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anupdsouza.SCIVisualiser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Small Cap Inv";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
