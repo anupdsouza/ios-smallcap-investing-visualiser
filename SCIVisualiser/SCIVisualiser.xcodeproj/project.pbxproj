@@ -13,6 +13,7 @@
 		E48880DA2A7A554E00903C98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48880D92A7A554E00903C98 /* Preview Assets.xcassets */; };
 		E48880E12A7A557500903C98 /* SCIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48880E02A7A557500903C98 /* SCIViewModel.swift */; };
 		E48880E32A7A55BC00903C98 /* SCIDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48880E22A7A55BC00903C98 /* SCIDataLoader.swift */; };
+		E4E3FC082A7B575A00AB4C4C /* SCIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E3FC072A7B575A00AB4C4C /* SCIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E48880D92A7A554E00903C98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E48880E02A7A557500903C98 /* SCIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCIViewModel.swift; sourceTree = "<group>"; };
 		E48880E22A7A55BC00903C98 /* SCIDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCIDataLoader.swift; sourceTree = "<group>"; };
+		E4E3FC072A7B575A00AB4C4C /* SCIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E48880E02A7A557500903C98 /* SCIViewModel.swift */,
 				E48880E22A7A55BC00903C98 /* SCIDataLoader.swift */,
 				E48880D42A7A554C00903C98 /* SCIContentView.swift */,
+				E4E3FC072A7B575A00AB4C4C /* SCIColor+Hex.swift */,
 				E48880D62A7A554E00903C98 /* Assets.xcassets */,
 				E48880D82A7A554E00903C98 /* Preview Content */,
 			);
@@ -147,6 +150,7 @@
 				E48880D52A7A554C00903C98 /* SCIContentView.swift in Sources */,
 				E48880E32A7A55BC00903C98 /* SCIDataLoader.swift in Sources */,
 				E48880D32A7A554C00903C98 /* SCIVisualiserApp.swift in Sources */,
+				E4E3FC082A7B575A00AB4C4C /* SCIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
