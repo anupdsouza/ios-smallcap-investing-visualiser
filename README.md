@@ -10,6 +10,10 @@ The app uses `Combine` framework to make network requests to the `niftyindices.c
 Note that the TRI displayed is of the `previous day` only.
 
 ---
+Demo:
+
+![Simulator Screen Recording - iPhone 14 - 2023-08-03 at 17 55 48](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/ecf66814-0879-4210-a402-1b60c259d565)
+
 Screens:
 
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/8e95394b-0bce-4ecb-b0cc-c45ad7e7bb21" width="150">
