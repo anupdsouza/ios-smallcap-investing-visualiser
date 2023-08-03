@@ -20,4 +20,4 @@ Screens:
 ---
 Use the Issues tab to report any bugs or enhancements, or fork the repo and submit a pull request with your own improvements!
 
-Once again, thanks to [Mr. Shankar Nath](https://www.youtube.com/@shankarnath) for the informative strategy video and to [NithishB06](https://github.com/NithishB06) for the web based small cap bot.
+Once again, thanks to [Mr. Shankar Nath](https://www.youtube.com/@shankarnath) for the informative strategy video and to [@NithishB06](https://github.com/NithishB06) for the web based small cap bot.
