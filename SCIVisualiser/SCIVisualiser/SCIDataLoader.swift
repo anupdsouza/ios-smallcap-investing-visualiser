@@ -34,29 +34,26 @@ final class SCIDataLoader {
         let niftyPublisher = fetchTRIData(requestBody: postBodyFor(niftySymbol))
         let smallcapPublisher = fetchTRIData(requestBody: postBodyFor(smallcapSymbol))
         
-        Publishers.Zip(niftyPublisher, smallcapPublisher)
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { niftyValues, smallcapValues in
-                
-                let smallcapInitialTRI = 2100.00
-                let niftyInitialTRI = 4807.77
-                
+        niftyPublisher.flatMap { niftyValues -> AnyPublisher<Float, Never> in
+            smallcapPublisher.map { smallcapValues -> Float in
+                let smallcapInitialTRI: Float = 2100.00
+                let niftyInitialTRI: Float = 4807.77
                 var relativeValue: Float = 0.0
                 
                 guard let smallcapValues = smallcapValues, let niftyValues = niftyValues else {
-                    completion(0)
-                    return
+                    return 0
                 }
+                
                 for smallcapObj in smallcapValues {
                     let smallcapDate = smallcapObj.date
-                    let smallcapTRI = Double(smallcapObj.totalReturnsIndex) ?? 0.0
-                    var niftyTRI: Double = 0.0
+                    let smallcapTRI = Float(smallcapObj.totalReturnsIndex) ?? 0.0
+                    var niftyTRI: Float = 0.0
                     
                     for niftyObj in niftyValues {
                         let niftyDate = niftyObj.date
                         
                         if niftyDate == smallcapDate {
-                            niftyTRI = Double(niftyObj.totalReturnsIndex) ?? 0.0
+                            niftyTRI = Float(niftyObj.totalReturnsIndex) ?? 0.0
                             break
                         }
                     }
@@ -67,9 +64,14 @@ final class SCIDataLoader {
                     }
                 }
                 
-                completion(relativeValue)
-            })
-            .store(in: &cancellables)
+                return relativeValue
+            }.eraseToAnyPublisher()
+        }
+        .receive(on: DispatchQueue.main)
+        .sink(receiveValue: { relativeValue in
+            completion(relativeValue)
+        })
+        .store(in: &cancellables)
     }
     
     func fetchTRIData(requestBody body: [String: String]) -> AnyPublisher<[StockIndex]?, Never> {

@@ -5,52 +5,62 @@
 //  Created by Anup D'Souza on 03/08/23.
 //
 
-import Foundation
-import UIKit
 import SwiftUI
 
-extension UIColor {
-    class func colorWithRGBHex(_ hex: UInt32) -> UIColor {
-        let r = CGFloat((hex >> 16) & 0xFF)
-        let g = CGFloat((hex >> 8) & 0xFF)
-        let b = CGFloat(hex & 0xFF)
-        
-        return UIColor(
-            red: r / 255.0,
-            green: g / 255.0,
-            blue: b / 255.0,
-            alpha: 1.0
-        )
-    }
-    
-    class func colorWithHexString(_ hexString: String) -> UIColor? {
-        var hexNum: UInt32 = 0
-        var scanner: Scanner?
-        
-        var sanitizedHexString = hexString
-        if sanitizedHexString.hasPrefix("#") {
-            sanitizedHexString.removeFirst()
+extension Color {
+    init?(hex: String) {
+        var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
+
+        var rgb: UInt64 = 0
+
+        var r: CGFloat = 0.0
+        var g: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 1.0
+
+        let length = hexSanitized.count
+
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { return nil }
+
+        if length == 6 {
+            r = CGFloat((rgb & 0xFF0000) >> 16) / 255.0
+            g = CGFloat((rgb & 0x00FF00) >> 8) / 255.0
+            b = CGFloat(rgb & 0x0000FF) / 255.0
+
+        } else if length == 8 {
+            r = CGFloat((rgb & 0xFF000000) >> 24) / 255.0
+            g = CGFloat((rgb & 0x00FF0000) >> 16) / 255.0
+            b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
+            a = CGFloat(rgb & 0x000000FF) / 255.0
+
+        } else {
+            return nil
         }
-        
-        scanner = Scanner(string: sanitizedHexString)
-        if let scanner = scanner, scanner.scanHexInt32(&hexNum) {
-            return UIColor.colorWithRGBHex(hexNum)
-        }
-        
-        return nil
+
+        self.init(red: r, green: g, blue: b, opacity: a)
     }
 }
 
 extension Color {
-    static func colorWithRGBHex(_ hex: UInt32) -> Color {
-        let uiColor = UIColor.colorWithRGBHex(hex)
-        return Color(uiColor)
-    }
-    
-    static func colorWithHexString(_ hexString: String) -> Color? {
-        guard let uiColor = UIColor.colorWithHexString(hexString) else {
+    func toHex() -> String? {
+        let uic = UIColor(self)
+        guard let components = uic.cgColor.components, components.count >= 3 else {
             return nil
         }
-        return Color(uiColor)
+        let r = Float(components[0])
+        let g = Float(components[1])
+        let b = Float(components[2])
+        var a = Float(1.0)
+
+        if components.count >= 4 {
+            a = Float(components[3])
+        }
+
+        if a != Float(1.0) {
+            return String(format: "%02lX%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255), lroundf(a * 255))
+        } else {
+            return String(format: "%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
+        }
     }
 }
