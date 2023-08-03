@@ -39,7 +39,7 @@ final class SCIViewModel: ObservableObject {
     func fetchTRIData() {
         self.triFetchStatus = .loading
         dataLoader.fetchLatestTRI {[weak self] value in
-            if 0..<1.40 ~= value {
+            if 0.6...1.40 ~= value {
                 self?.tri = value
                 self?.triFetchStatus = .success
             } else {
