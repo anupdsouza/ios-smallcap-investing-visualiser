@@ -74,7 +74,7 @@ final class SCIDataLoader {
         .store(in: &cancellables)
     }
     
-    func fetchTRIData(requestBody body: [String: String]) -> AnyPublisher<[StockIndex]?, Never> {
+    private func fetchTRIData(requestBody body: [String: String]) -> AnyPublisher<[StockIndex]?, Never> {
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "POST"
         for (header, val) in requestHeaders() {
