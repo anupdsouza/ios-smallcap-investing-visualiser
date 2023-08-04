@@ -30,18 +30,19 @@ final class SCIDataLoader {
     private let urlString = "https://www.niftyindices.com/Backpage.aspx/getTotalReturnIndexString"
     private var cancellables = Set<AnyCancellable>()
 
-    func fetchLatestTRI(completion: @escaping (_ value: Float) -> ()) {
+    func fetchLatestTRI(completion: @escaping (_ value: TRIData?) -> ()) {
         let niftyPublisher = fetchTRIData(requestBody: postBodyFor(niftySymbol))
         let smallcapPublisher = fetchTRIData(requestBody: postBodyFor(smallcapSymbol))
         
-        niftyPublisher.flatMap { niftyValues -> AnyPublisher<Float, Never> in
-            smallcapPublisher.map { smallcapValues -> Float in
+        niftyPublisher.flatMap { niftyValues -> AnyPublisher<TRIData?, Never> in
+            smallcapPublisher.map { smallcapValues -> TRIData? in
                 let smallcapInitialTRI: Float = 2100.00
                 let niftyInitialTRI: Float = 4807.77
                 var relativeValue: Float = 0.0
+                var triData: TRIData? = nil
                 
                 guard let smallcapValues = smallcapValues, let niftyValues = niftyValues else {
-                    return 0
+                    return nil
                 }
                 
                 for smallcapObj in smallcapValues {
@@ -60,11 +61,12 @@ final class SCIDataLoader {
                     
                     if smallcapTRI != 0.0 && niftyTRI != 0.0 {
                         relativeValue = Float((smallcapTRI / smallcapInitialTRI) / (niftyTRI / niftyInitialTRI))
+                        triData = TRIData(date: smallcapDate, tri: relativeValue)
                         break
                     }
                 }
                 
-                return relativeValue
+                return triData
             }.eraseToAnyPublisher()
         }
         .receive(on: DispatchQueue.main)
@@ -110,7 +112,7 @@ final class SCIDataLoader {
         return body
     }
     
-    private func triRequestDate() -> String {
+    func triRequestDate() -> String {
         let today = Date()
         guard let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today) else {
             return ""

@@ -71,7 +71,7 @@ struct SCIContentView: View {
                             Text(String(format: "%.2f", model.level))
                             Spacer()
                         }
-                        if let currentTRI = viewModel.tri,
+                        if let currentTRI = viewModel.latestTRI,
                            model.levelLowerBound...model.level ~= currentTRI {
                             Text(String(format: "Current TRI is %.2f", currentTRI))
                                 .fontWeight(.light)
