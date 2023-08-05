@@ -8,7 +8,7 @@
 import Foundation
 
 internal struct TRILevel {
-    let level: Float
-    let levelColor: String
-    let levelLowerBound: Float
+    let level: Double
+    let levelLowerBound: Double
+    var levelColor: String
 }

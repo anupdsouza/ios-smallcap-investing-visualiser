@@ -68,6 +68,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E416CE252A7E0A560009F505 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E48880D42A7A554C00903C98 /* SCIContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E416CE262A7E0A610009F505 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4E3FC072A7B575A00AB4C4C /* SCIColor+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E416CE272A7E0A770009F505 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E48880E02A7A557500903C98 /* SCIViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E416CE282A7E0A910009F505 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E48880E22A7A55BC00903C98 /* SCIDataLoader.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		E48880C62A7A554C00903C98 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +120,12 @@
 		E48880D12A7A554C00903C98 /* SCIVisualiser */ = {
 			isa = PBXGroup;
 			children = (
-				E414346F2A7CCBD1005A082B /* Model */,
 				E48880D22A7A554C00903C98 /* SCIVisualiserApp.swift */,
-				E48880E02A7A557500903C98 /* SCIViewModel.swift */,
-				E48880E22A7A55BC00903C98 /* SCIDataLoader.swift */,
-				E48880D42A7A554C00903C98 /* SCIContentView.swift */,
-				E4E3FC072A7B575A00AB4C4C /* SCIColor+Hex.swift */,
+				E414346F2A7CCBD1005A082B /* Model */,
+				E416CE252A7E0A560009F505 /* View */,
+				E416CE272A7E0A770009F505 /* ViewModel */,
+				E416CE282A7E0A910009F505 /* Network */,
+				E416CE262A7E0A610009F505 /* Extensions */,
 				E48880D62A7A554E00903C98 /* Assets.xcassets */,
 				E41434682A7CBEF9005A082B /* GoogleService-Info.plist */,
 				E48880D82A7A554E00903C98 /* Preview Content */,
