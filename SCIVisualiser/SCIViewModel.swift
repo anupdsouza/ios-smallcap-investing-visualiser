@@ -22,17 +22,30 @@ final class SCIViewModel: ObservableObject {
     private var db = Firestore.firestore()
     private let collectionPath = "TRIValues"
     
-    let triLevels: [TRILevel] = [
-        TRILevel(level: 1.40, levelColor: "#ecb576", levelLowerBound: 1.31),
-        TRILevel(level: 1.30, levelColor: "#f2cda2", levelLowerBound: 1.21),
-        TRILevel(level: 1.20, levelColor: "#f8e4d0", levelLowerBound: 1.11),
-        TRILevel(level: 1.10, levelColor: "#ffffff", levelLowerBound: 1.01),
-        TRILevel(level: 1.0, levelColor: "#ffffff", levelLowerBound: 0.91),
-        TRILevel(level: 0.90, levelColor: "#dce9d5", levelLowerBound: 0.81),
-        TRILevel(level: 0.80, levelColor: "#bdd5ac", levelLowerBound: 0.71),
-        TRILevel(level: 0.70, levelColor: "#9dc284", levelLowerBound: 0.61),
-        TRILevel(level: 0.60, levelColor: "#ffffff", levelLowerBound: 0.51)
-    ]
+    private let rangeStart: Float
+    private let rangeEnd: Float
+    private let rangeIncrement: Float
+    private let rangeColors: [String]
+
+    init(rangeStart: Float, rangeEnd: Float, rangeIncrement: Float, rangeColors: [String]) {
+        self.rangeStart = rangeStart
+        self.rangeEnd = rangeEnd
+        self.rangeIncrement = rangeIncrement
+        self.rangeColors = rangeColors
+    }
+    
+    lazy var triLevels: [TRILevel] = {
+        var start = rangeStart
+        var levels = [TRILevel]()
+        while start < (rangeEnd + 0.01) {
+            print(start)
+            levels.append(TRILevel(level: start, levelColor: "", levelLowerBound: start - rangeIncrement + 0.01))
+            start += rangeIncrement
+            print(start)
+        }
+        levels.sort { $0.level > $1.level }        
+        return levels
+    }()
     
     func fetchTRIData() {
         self.triFetchStatus = .loading

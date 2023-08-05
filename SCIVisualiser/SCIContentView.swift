@@ -15,7 +15,12 @@ struct SCIContentView: View {
     private let errorText = "There was an error fetching TRI data.\nPlease try again after sometime or tap the Refresh button to try now."
     private let refreshButtonTitle = "Refresh"
     
-    @StateObject private var viewModel = SCIViewModel()
+    @StateObject private var viewModel = SCIViewModel(rangeStart: 0.6,
+                                                      rangeEnd: 1.4,
+                                                      rangeIncrement: 0.1,
+                                                      rangeColors: [
+                                                        "#ffffff", "#9dc284", "#bdd5ac", "#dce9d5", "#ffffff", "#ffffff", "#f8e4d0", "#f2cda2", "#ecb576"
+                                                      ])
     
     var body: some View {
         titleView()
