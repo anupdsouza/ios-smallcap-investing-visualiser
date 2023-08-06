@@ -16,10 +16,10 @@ struct SCIContentView: View {
     private let refreshButtonTitle = "Refresh"
     
     @StateObject private var viewModel = SCIViewModel(rangeStart: 0.6,
-                                                      rangeEnd: 1.40,
+                                                      rangeEnd: 1.50,
                                                       rangeIncrement: 0.10,
                                                       rangeColors: [
-                                                        "#ffffff", "#9dc284", "#bdd5ac", "#dce9d5", "#ffffff", "#ffffff", "#f8e4d0", "#f2cda2", "#ecb576"
+                                                        "#d1fab6", "#d9fac3", "#e0facf", "#e9fade", "#ebf5fc", "#ebf5fc", "#ffefd9", "#fce8cc", "#fce3c0", "#fcdeb3"
                                                       ])
     
     var body: some View {
@@ -70,25 +70,13 @@ struct SCIContentView: View {
     @ViewBuilder private func successView() -> AnyView {
         AnyView(
             VStack(spacing: 0) {
-                ForEach(viewModel.triLevels, id: \.level) { model in
-                    VStack {
-                        HStack {
-                            Text(String(format: "%.2f", model.level))
-                            Spacer()
-                        }
-                        if let currentTRI = viewModel.latestTRI,
-                           currentTRI > model.levelLowerBound && currentTRI <= model.level {
-                            Text(String(format: "Current TRI is %.2f", currentTRI))
-                                .fontWeight(.light)
-                            Spacer()
-                        } else {
-                            Spacer()
-                        }
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color(hex: model.levelColor))
+                ForEach(0..<viewModel.triLevels.count, id:\.self) { index in
+                    let level = viewModel.triLevels[index]
+                    SCIAnimatedVStack(index: index, level: level, viewModel: viewModel)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-            }.analyticsScreen(name: "successView")
+            }
+                .analyticsScreen(name: "successView")
         )
     }
     

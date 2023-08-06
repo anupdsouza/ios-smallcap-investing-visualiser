@@ -39,30 +39,34 @@ final class SCIViewModel: ObservableObject {
         var index = 0
         while index < rangeColors.count {
             for value in stride(from: rangeStart, through: rangeEnd, by: rangeIncrement) {
-                levels.append(TRILevel(level: value, levelLowerBound: value - rangeIncrement, levelColor: rangeColors[index]))
+                levels.append(TRILevel(levelUpperBound: value, levelLowerBound: value - rangeIncrement, levelColor: rangeColors[index]))
                 index += 1
             }
         }
-        levels.sort { $0.level > $1.level }
+        levels.sort { $0.levelUpperBound > $1.levelUpperBound }
         return levels
     }()
     
     func fetchTRIData() {
         self.triFetchStatus = .loading
-        db.collection(collectionPath).addSnapshotListener {[weak self] querySnapshot, error in
-            
-            guard let documents = querySnapshot?.documents,
-                  let triData = documents.compactMap({ queryDocumentSnapshot -> TRIData? in
-                      return try? queryDocumentSnapshot.data(as: TRIData.self)
-                  }).first,
-                  triData.date == self?.dataLoader.triRequestDate().replacingOccurrences(of: "-", with: " ") else {
-                self?.fetchLatestTRI()
-                return
-            }
-            
-            self?.latestTRI = triData.tri
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.latestTRI = 1.25
             self?.triFetchStatus = .success
         }
+//        db.collection(collectionPath).addSnapshotListener {[weak self] querySnapshot, error in
+//
+//            guard let documents = querySnapshot?.documents,
+//                  let triData = documents.compactMap({ queryDocumentSnapshot -> TRIData? in
+//                      return try? queryDocumentSnapshot.data(as: TRIData.self)
+//                  }).first,
+//                  triData.date == self?.dataLoader.triRequestDate().replacingOccurrences(of: "-", with: " ") else {
+//                self?.fetchLatestTRI()
+//                return
+//            }
+//
+//            self?.latestTRI = triData.tri
+//            self?.triFetchStatus = .success
+//        }
     }
 
     private func fetchLatestTRI() {
