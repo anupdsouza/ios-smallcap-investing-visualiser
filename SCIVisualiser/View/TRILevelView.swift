@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct TRILevelView: View {
+internal struct TRILevelView: View {
+
     let index: Int
     let level: TRILevel
     let currentTRIValue: Double

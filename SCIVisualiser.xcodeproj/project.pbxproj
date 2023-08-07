@@ -21,6 +21,7 @@
 		E48880DA2A7A554E00903C98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48880D92A7A554E00903C98 /* Preview Assets.xcassets */; };
 		E48880E12A7A557500903C98 /* TRIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48880E02A7A557500903C98 /* TRIViewModel.swift */; };
 		E48880E32A7A55BC00903C98 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48880E22A7A55BC00903C98 /* DataLoader.swift */; };
+		E4D2F6E12A81006E008073B4 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D2F6E02A81006E008073B4 /* StringConstants.swift */; };
 		E4E3FC082A7B575A00AB4C4C /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E3FC072A7B575A00AB4C4C /* Color+Hex.swift */; };
 		E4E6D8A22A808F91000727E3 /* StockIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6D8A12A808F91000727E3 /* StockIndex.swift */; };
 		E4E6D8AA2A809D88000727E3 /* AnalyticsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6D8A92A809D88000727E3 /* AnalyticsConstants.swift */; };
@@ -41,6 +42,7 @@
 		E48880D92A7A554E00903C98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E48880E02A7A557500903C98 /* TRIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRIViewModel.swift; sourceTree = "<group>"; };
 		E48880E22A7A55BC00903C98 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		E4D2F6E02A81006E008073B4 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		E4E3FC072A7B575A00AB4C4C /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		E4E6D8A12A808F91000727E3 /* StockIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockIndex.swift; sourceTree = "<group>"; };
 		E4E6D8A92A809D88000727E3 /* AnalyticsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsConstants.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				E4E6D8A92A809D88000727E3 /* AnalyticsConstants.swift */,
+				E4D2F6E02A81006E008073B4 /* StringConstants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				E4E6D8AA2A809D88000727E3 /* AnalyticsConstants.swift in Sources */,
 				E48880E32A7A55BC00903C98 /* DataLoader.swift in Sources */,
 				E48880D32A7A554C00903C98 /* SCIVisualiserApp.swift in Sources */,
+				E4D2F6E12A81006E008073B4 /* StringConstants.swift in Sources */,
 				E4E3FC082A7B575A00AB4C4C /* Color+Hex.swift in Sources */,
 				E4E6D8B02A80B7F7000727E3 /* DataManager.swift in Sources */,
 				E4E6D8AC2A80B338000727E3 /* TRIConfig.swift in Sources */,

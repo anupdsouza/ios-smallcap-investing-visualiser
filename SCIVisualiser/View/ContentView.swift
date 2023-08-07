@@ -9,12 +9,6 @@ import SwiftUI
 import FirebaseAnalyticsSwift
 
 struct ContentView: View {
-    
-    private let titleText = "Small Cap Investing Visualiser"
-    private let loadingText = "Fetching TRI data, please wait..."
-    private let refreshButtonText = "Refresh"
-    private let disclaimerText = "Disclaimer: The illustration presented in this app is for information only and is not meant to be used as financial advice. We assume no responsibility or liability for any damages or losses of any kind occurring out of use of the information presented which is provided on an \"as is\" basis with no guarantees of completeness, accuracy, usefulness or timeliness."
-    private let errorText = "There was an error fetching TRI data.\nPlease try again after sometime or tap the Refresh button to try now."
 
     @StateObject private var viewModel = TRIViewModel()
     
@@ -32,7 +26,7 @@ struct ContentView: View {
                     disclaimerView()
                 }
             }
-            .navigationTitle(titleText)
+            .navigationTitle(StringConstants.titleText)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 viewModel.fetchTRIData()
@@ -43,9 +37,9 @@ struct ContentView: View {
     
     @ViewBuilder private func disclaimerView() -> AnyView {
         AnyView(
-            Text(disclaimerText)
+            Text(StringConstants.disclaimerText)
                 .font(.footnote)
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(.leading)
                 .padding(20)
         )
     }
@@ -53,7 +47,7 @@ struct ContentView: View {
     @ViewBuilder private func loadingView() -> AnyView {
         AnyView(
             VStack {
-                Text(loadingText)
+                Text(StringConstants.loadingText)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .analyticsScreen(name: AnalyticsConstants.loadingView)
@@ -75,9 +69,10 @@ struct ContentView: View {
     @ViewBuilder private func failureView() -> AnyView {
         AnyView(
             VStack {
-                Text(errorText)
-                    .multilineTextAlignment(.center)
-                Button(refreshButtonText) {
+                Text(StringConstants.failureText)
+                    .multilineTextAlignment(.leading)
+                    .padding(20)
+                Button(StringConstants.refreshButtonText) {
                     viewModel.fetchTRIData()
                 }
                 .buttonStyle(.bordered)
