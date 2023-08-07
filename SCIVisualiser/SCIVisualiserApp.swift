@@ -23,7 +23,7 @@ struct SCIVisualiserApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SCIContentView()
+            ContentView()
         }
     }
 }

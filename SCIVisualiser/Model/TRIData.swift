@@ -11,5 +11,5 @@ import FirebaseFirestoreSwift
 internal struct TRIData: Identifiable, Codable {
     @DocumentID var id: String?
     let date: String
-    let tri: Double
+    let value: Double
 }
