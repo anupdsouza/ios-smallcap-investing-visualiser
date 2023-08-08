@@ -11,17 +11,23 @@ Note that the TRI displayed is of the `previous day` only.
 
 ---
 Demo:
+![Simulator Screen Recording - iPhone 14 - 2023-08-08 at 13 01 28](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/7c4d469d-2dad-4b97-972c-82919d1dad5b)
 
-![Simulator Screen Recording - iPhone 14 - 2023-08-03 at 17 55 48](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/ecf66814-0879-4210-a402-1b60c259d565)
 
 Screens:
 
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/8e95394b-0bce-4ecb-b0cc-c45ad7e7bb21" width="150">
-<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/5ee2dd97-b484-4801-8085-0706a7a59ece" width="150">
-<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/e469e90d-b673-42e9-8e89-8eda5d2dcf3a" width="150">
-<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/63ced0ad-6db6-4438-849a-1266d474e801" width="150">
+<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/498b7cb9-3194-44f9-87a0-dd150d46d232" width="150">
+<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/e1033b68-5882-455f-85e7-deba044d3bc9" width="150">
+<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/67e83dd4-2a65-4d2d-b59a-76a130ec5b6e" width="150">
 
 ---
+The app uses Firebase in order to persist data locally as well as in the Firestore. This enables multiple instances of the app to be in sync with the online database so as to view the data if it was already queried for by any app instance from the API, thereby preventing additional calls to it.
+
+<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/2bf4a4c1-c99e-459c-82fb-b4fb7254f333">
+
+---
+
 Use the Issues tab to report any bugs or enhancements, or fork the repo and submit a pull request with your own improvements!
 
 Once again, thanks to [Mr. Shankar Nath](https://www.youtube.com/@shankarnath) for the informative strategy video and to [@NithishB06](https://github.com/NithishB06) for the web based small cap bot.
