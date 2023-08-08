@@ -11,12 +11,10 @@ final class TRIViewModel: ObservableObject {
 
     @Published var loadingState: LoadingState = .loading
     private let dataManager = DataManager()
-    
     private lazy var triConfig: TRIConfig = {
         let colors = ["#d1fab6", "#d9fac3", "#e0facf", "#e9fade", "#ebf5fc", "#ebf5fc", "#ffefd9", "#fce8cc", "#fce3c0", "#fcdeb3"]
         return .init(start: 0.6, end: 1.5, step: 0.1, colors: colors)
     }()
-
     private lazy var triLevels: [TRILevel] = {
         var levels = [TRILevel]()
         var index = 0

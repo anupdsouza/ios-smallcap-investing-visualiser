@@ -13,35 +13,22 @@ struct ContentView: View {
     @StateObject private var viewModel = TRIViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                switch viewModel.loadingState {
-                case .loading:
-                    loadingView()
-                    disclaimerView()
-                case .success((let triValue, let triLevels)):
-                    triViewWithTRI(triValue, triLevels: triLevels)
-                case .failure:
-                    failureView()
-                    disclaimerView()
-                }
-            }
-            .navigationTitle(StringConstants.titleText)
-            .navigationBarTitleDisplayMode(.inline)
-            .onAppear {
-                viewModel.fetchTRIData()
+        VStack(spacing: 0) {
+            switch viewModel.loadingState {
+            case .loading:
+                loadingView()
+            case .success((let triValue, let triLevels)):
+                triViewWithTRI(triValue, triLevels: triLevels)
+            case .failure:
+                failureView()
             }
         }
+        .navigationTitle(StringConstants.titleText)
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear { [weak viewModel] in
+            viewModel?.fetchTRIData()
+        }
         .analyticsScreen(name: "\(ContentView.self)")
-    }
-    
-    @ViewBuilder private func disclaimerView() -> AnyView {
-        AnyView(
-            Text(StringConstants.disclaimerText)
-                .font(.footnote)
-                .multilineTextAlignment(.leading)
-                .padding(20)
-        )
     }
     
     @ViewBuilder private func loadingView() -> AnyView {

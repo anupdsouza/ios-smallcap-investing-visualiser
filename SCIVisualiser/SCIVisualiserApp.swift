@@ -16,6 +16,35 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+struct StartView: View {
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 0) {
+                Spacer()
+                disclaimerView()
+                NavigationLink(StringConstants.acceptNavigationText) {
+                    ContentView()
+                }.buttonStyle(.bordered)
+                Spacer()
+            }
+            .navigationTitle(StringConstants.startTitleText)
+        }
+    }
+    
+    @ViewBuilder private func disclaimerView() -> AnyView {
+        AnyView(
+            VStack(alignment: .leading, spacing: 0) {
+                Text(StringConstants.disclaimerText)
+                    .font(.title2)
+                    .padding(.bottom, 5)
+                Text(StringConstants.disclaimerSubText)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.leading)
+            }.padding(20)
+        )
+    }
+}
+
 @main
 struct SCIVisualiserApp: App {
     // register app delegate for Firebase setup
@@ -23,7 +52,7 @@ struct SCIVisualiserApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }
