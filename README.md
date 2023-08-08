@@ -11,6 +11,7 @@ Note that the TRI displayed is of the `previous day` only.
 
 ---
 Demo:
+
 ![Simulator Screen Recording - iPhone 14 - 2023-08-08 at 13 01 28](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/7c4d469d-2dad-4b97-972c-82919d1dad5b)
 
 
