@@ -9,26 +9,27 @@ Once installed you will see the **Small Cap Inv** app icon on the dashboard, tap
 The app uses `Combine` framework to make network requests to the `niftyindices.com` API and displays the TRI in the UI on receiving a successful response.
 Note that the TRI displayed is of the `previous day` only.
 
----
-Demo:
+The app uses Firebase in order to persist data locally as well as in the Firestore. This enables multiple instances of the app to be in sync with the online database so as to view the data if it was already queried for by any app instance from the API, thereby preventing additional calls to it.
 
-![Simulator Screen Recording - iPhone 14 - 2023-08-08 at 13 01 28](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/7c4d469d-2dad-4b97-972c-82919d1dad5b)
+<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/2bf4a4c1-c99e-459c-82fb-b4fb7254f333">
 
 
-Screens:
-
+## Screenshots
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/8e95394b-0bce-4ecb-b0cc-c45ad7e7bb21" width="150">
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/498b7cb9-3194-44f9-87a0-dd150d46d232" width="150">
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/e1033b68-5882-455f-85e7-deba044d3bc9" width="150">
 <img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/67e83dd4-2a65-4d2d-b59a-76a130ec5b6e" width="150">
 
----
-The app uses Firebase in order to persist data locally as well as in the Firestore. This enables multiple instances of the app to be in sync with the online database so as to view the data if it was already queried for by any app instance from the API, thereby preventing additional calls to it.
+## Video
+![Simulator Screen Recording - iPhone 14 - 2023-08-08 at 13 01 28](https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/7c4d469d-2dad-4b97-972c-82919d1dad5b)
 
-<img src="https://github.com/anupdsouza/ios-smallcap-investing-visualiser/assets/103429618/2bf4a4c1-c99e-459c-82fb-b4fb7254f333">
+## Stay Connected 🤙🏼
+- <picture><img align="center" alt="star the repo" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/star.png" height="20" hspace="5"></picture><a href="https://github.com/anupdsouza/ios-scratch-card-view">Star the Repo</a>
+- <picture><img align="center" alt="youtube" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/ic-yt.png" height="20" hspace="5"></picture><a href="https://www.youtube.com/@swiftodyssey">Subscribe on YouTube</a>
+- <picture><img align="center" alt="buymeacoffee" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/ic-bmc.png" height="20" hspace="5"></picture><a href="https://www.buymeacoffee.com/adsouza">Buy Me a Coffee</a>
+- <picture><img align="center" alt="patreon" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/ic-patreon.png" height="20" hspace="5"></picture><a href="https://patreon.com/adsouza">Become a Patron</a>
+- <picture><img align="center" alt="x" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/ic-x.png" height="20" hspace="5"></picture><a href="https://x.com/swift_odyssey">Follow me on X</a>
+- <picture><img align="center" alt="github" src="https://github.com/anupdsouza/ios-miscellaneous/blob/bf5cb23d0ffbb21afa7b442540a7682df27c3b12/ic-gh.png" height="20" hspace="5"></picture><a href="https://github.com/anupdsouza">Follow me on GitHub</a>
 
----
-
-Use the Issues tab to report any bugs or enhancements, or fork the repo and submit a pull request with your own improvements!
-
+Your support makes projects like this possible!
 Once again, thanks to [Mr. Shankar Nath](https://www.youtube.com/@shankarnath) for the informative strategy video and to [@NithishB06](https://github.com/NithishB06) for the web based small cap bot.
